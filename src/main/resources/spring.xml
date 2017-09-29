@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- ******************   beans  ****************** -->
+
+    <!-- Service -->
+    <bean name="serviceGreeting"   class="com.vicboma.fwk.spring.boot.service.src.ServiceGreetingImpl"/>
+    <bean name="serviceHelloWorld" class="com.vicboma.fwk.spring.boot.service.src.ServiceHelloWorldImpl"/>
+
+    <!-- Controller -->
+    <bean name="controllerGreeting"  abstract="true" class="com.vicboma.fwk.spring.boot.controller.src.GreetingControllerImpl">
+        <constructor-arg  ref ="serviceGreeting"/>
+    </bean>
+
+    <bean name="controllerHelloWorld"  abstract="true" class="com.vicboma.fwk.spring.boot.controller.src.HelloWorldControllerImpl">
+        <constructor-arg  ref ="serviceHelloWorld"/>
+    </bean>
+
+</beans>
