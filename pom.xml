@@ -27,6 +27,7 @@
 		<maven.version>4.0.0</maven.version>
 		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
 		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.saga.version>1.5.4</maven.saga.version>
 	</properties>
 
 	<dependencies>
@@ -115,15 +116,36 @@
 					<format>xml</format>
 					<aggregate>true</aggregate>
 					<check>
-						<branchRate>40</branchRate>
-						<lineRate>0</lineRate>
+						<branchRate>70</branchRate>
+						<lineRate>50</lineRate>
 						<haltOnFailure>false</haltOnFailure>
-						<totalBranchRate>30</totalBranchRate>
-						<totalLineRate>30</totalLineRate>
-						<packageLineRate>30</packageLineRate>
-						<packageBranchRate>30</packageBranchRate>
+						<totalBranchRate>80</totalBranchRate>
+						<totalLineRate>80</totalLineRate>
+						<packageLineRate>80</packageLineRate>
+						<packageBranchRate>75</packageBranchRate>
 					</check>
 
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.timurstrekalov</groupId>
+				<artifactId>saga-maven-plugin</artifactId>
+				<version>1.5.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>coverage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<baseDir>http://localhost:8080</baseDir>
+					<outputDir>${project.build.directory}/saga-coverage</outputDir>
+					<noInstrumentPatterns>
+						<pattern>.*/spec/.*</pattern>
+						<pattern>.*/classpath/.*</pattern>
+						<pattern>.*/webjars/.*</pattern>
+					</noInstrumentPatterns>
 				</configuration>
 			</plugin>
 		</plugins>

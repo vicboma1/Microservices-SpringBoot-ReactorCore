@@ -8,21 +8,17 @@ cache:
   directories:
        - $HOME/.m2
 
-# use operating systems.
-os:
-  - linux
+env:
+  global:
+    - DISPLAY=:99.0
 
 jdk:
   - oraclejdk8
-
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
 
 script:
   - jdk_switcher use oraclejdk8
   - mvn test -f ./pom.xml
 
 after_success:
-  - mvn clean test cobertura:cobertura coveralls:report
+  - cd source
+  - mvn clean test saga:coverage cobertura:cobertura coveralls:report
