@@ -9,30 +9,29 @@ import com.vicboma.fwk.spring.boot.service.api.ServiceHelloWorld;
 import com.vicboma.fwk.spring.boot.service.src.ServiceGreetingImpl;
 import com.vicboma.fwk.spring.boot.service.src.ServiceHelloWorldImpl;
 import org.junit.Assert;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import reactor.core.publisher.Mono;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-class HelloWorldControllerImplTest {
+public class HelloWorldControllerImplTest {
 
     private HelloWorldController helloWorldController;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() throws Exception{
         ServiceHelloWorld serviceHelloWorld = new ServiceHelloWorldImpl();
         helloWorldController = new HelloWorldControllerImpl(serviceHelloWorld);
     }
 
-    @AfterEach
-    void tearDown() {
+    @After
+    public void tearDown()throws Exception {
         helloWorldController = null;
     }
 
     @Test
-    void getHelloWorld() {
+    public void getHelloWorld()throws Exception {
 
         final Mono<HelloWorldModel> expected = Mono.just(HelloWorldModel.create(HelloWorldModel.HELLO_WORLD));
         final Mono<HelloWorldModel> result = helloWorldController.home();

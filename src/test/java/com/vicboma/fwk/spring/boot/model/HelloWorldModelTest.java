@@ -1,22 +1,23 @@
 package com.vicboma.fwk.spring.boot.model;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class HelloWorldModelTest {
+public class HelloWorldModelTest {
 
     final static String expected = "vicboma1";
 
     @Test
-    void _class() {
+    public void _class()throws Exception {
         final HelloWorldModel helloWorldModel = HelloWorldModel.create(expected);
         Assert.assertEquals(helloWorldModel.getClass(),HelloWorldModel.class);
     }
 
     @Test
-    void create() {
+    public void create()throws Exception {
         final HelloWorldModel helloWorldModel = HelloWorldModel.create(expected);
         final HelloWorldModel helloWorldMode2 = HelloWorldModel.create(expected);
 
@@ -24,7 +25,7 @@ class HelloWorldModelTest {
     }
 
     @Test
-    void getHi() {
+    public void getHi() throws Exception{
 
         final HelloWorldModel helloWorldModel = HelloWorldModel.create(expected);
         final String result = helloWorldModel.getHelloWorld();

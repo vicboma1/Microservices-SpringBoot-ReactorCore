@@ -3,32 +3,30 @@ package com.vicboma.fwk.spring.boot.service.src;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vicboma.fwk.logger.Loggable;
-import com.vicboma.fwk.spring.boot.model.GrettingModel;
-import com.vicboma.fwk.spring.boot.service.api.ServiceGreeting;
 import com.vicboma.fwk.spring.boot.service.api.ServiceHelloWorld;
 import org.junit.Assert;
-import reactor.core.publisher.Mono;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.concurrent.CompletableFuture;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class ServiceHelloWorldImplTest implements Loggable {
+public class ServiceHelloWorldImplTest implements Loggable {
 
     private ServiceHelloWorld serviceHelloWorld;
 
-    @org.junit.jupiter.api.BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() throws Exception {
         serviceHelloWorld = new ServiceHelloWorldImpl();
     }
 
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
+    @After
+    public void tearDown() throws Exception {
         serviceHelloWorld = null;
     }
 
-    @org.junit.jupiter.api.Test
-    void get() throws Exception {
+    @Test
+    public void get() throws Exception {
 
         final CompletableFuture lock = new CompletableFuture();
         final StringBuilder expected = new StringBuilder("{\"helloWorld\":\"Hello World!\"}");

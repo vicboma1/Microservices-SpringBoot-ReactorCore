@@ -4,26 +4,28 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vicboma.fwk.logger.Loggable;
 import com.vicboma.fwk.spring.boot.service.api.ServiceGreeting;
+import org.junit.After;
 import org.junit.Assert;
-
+import org.junit.Before;
+import org.junit.Test;
 import java.util.concurrent.CompletableFuture;
 
-class ServiceGreetingImplTest implements Loggable {
+public class ServiceGreetingImplTest implements Loggable {
 
     private ServiceGreeting serviceGreeting;
 
-    @org.junit.jupiter.api.BeforeEach
-    void setUp() {
+    @Before
+    public void setUp()throws Exception {
         serviceGreeting = new ServiceGreetingImpl();
     }
 
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
+    @After
+    public void tearDown()throws Exception {
         serviceGreeting = null;
     }
 
-    @org.junit.jupiter.api.Test
-    void get() throws Exception {
+    @Test
+    public void get() throws Exception {
 
         final CompletableFuture lock = new CompletableFuture();
         String name = "vicboma1";
