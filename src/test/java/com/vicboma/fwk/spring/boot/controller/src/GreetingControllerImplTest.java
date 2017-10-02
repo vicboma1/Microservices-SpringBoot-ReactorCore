@@ -32,7 +32,7 @@ public class GreetingControllerImplTest {
     @Test
     public void getHi() throws Exception{
 
-        final Mono<GrettingModel> expected = Mono.just(GrettingModel.create(value));
+        final Mono<GrettingModel> expected = Mono.just(GrettingModel.create().setHi(value));
         final Mono<GrettingModel> result = greetingController.hi(value);
 
         Assert.assertEquals(expected.block().getHi(), result.block().getHi());
