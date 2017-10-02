@@ -32,7 +32,7 @@ Sample / WIP
     Mono<GrettingModel> hi(@PathVariable String name);
 
    /**
-    * @input http://localhost:8080/hi/vicboma
+    * @input http://localhost:8080/hi/vicboma/delayDefault
     * @param name
     * @return {"hi":"vicboma"}
     */
