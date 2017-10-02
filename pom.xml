@@ -105,13 +105,13 @@
 					<format>xml</format>
 					<aggregate>true</aggregate>
 					<check>
-						<branchRate>70</branchRate>
+						<branchRate>50</branchRate>
 						<lineRate>50</lineRate>
 						<haltOnFailure>false</haltOnFailure>
-						<totalBranchRate>80</totalBranchRate>
-						<totalLineRate>80</totalLineRate>
-						<packageLineRate>80</packageLineRate>
-						<packageBranchRate>75</packageBranchRate>
+						<totalBranchRate>50</totalBranchRate>
+						<totalLineRate>50</totalLineRate>
+						<packageLineRate>50</packageLineRate>
+						<packageBranchRate>50</packageBranchRate>
 					</check>
 
 				</configuration>

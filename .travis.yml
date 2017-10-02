@@ -20,5 +20,4 @@ script:
   - mvn test -f ./pom.xml
 
 after_success:
-  - cd source
-  - mvn clean test saga:coverage cobertura:cobertura coveralls:report
+  - mvn clean test cobertura:cobertura coveralls:report
