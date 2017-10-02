@@ -6,6 +6,10 @@ import reactor.core.publisher.Mono;
 
 public interface HelloWorldController extends Controller {
 
-    @GetMapping("/")
-    Mono<HelloWorldModel> home();
+    /**
+     * @input http://localhost:8080
+     * @return {"helloWorld":"Hello World!"}
+     */
+     @GetMapping("/")
+     Mono<HelloWorldModel> home();
 }

@@ -26,4 +26,25 @@ public class GreetingControllerImpl implements GreetingController {
         return this.serviceGreeting.get(name);
     }
 
+    @Override
+    @GetMapping("/hi/{name}/delayDefault")
+    public Mono<GrettingModel> hiDelayDefault(@PathVariable String name){
+        this.getLogger().info("GetMapping -> '/hiDelay/{"+name+"}");
+        return this.serviceGreeting.getDelay(name);
+    }
+
+    @Override
+    @GetMapping("/hi/{name}/delay/{timeMS}")
+    public Mono<GrettingModel> hiDelayTime(@PathVariable String name, @PathVariable Long timeMS){
+        this.getLogger().info("GetMapping -> '/hi/{"+name+"}/delay/{"+timeMS+"}");
+        return this.serviceGreeting.getDelayTime(name,timeMS);
+    }
+
+    @Override
+    @GetMapping("/hi/{name}/delay")
+    public Mono<GrettingModel> hiDelayTimeRequestParam(@PathVariable String name, @RequestParam Long timeMS){
+        this.getLogger().info("GetMapping -> '/hi/{"+name+"}/delay?timeMS={"+timeMS+"}");
+        return this.serviceGreeting.getDelayTime(name,timeMS == 0 ? 1000L : timeMS );
+    }
+
 }

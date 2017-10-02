@@ -2,17 +2,22 @@ package com.vicboma.fwk.spring.boot.model;
 
 public class GrettingModel {
 
-    public String hi;
+    private String hi;
 
-    public static GrettingModel create(String name) {
-        return new GrettingModel(name);
+    public static GrettingModel create() {
+        return new GrettingModel();
     }
 
-    GrettingModel(String name) {
-        this.hi = name;
+    GrettingModel() {
+
     }
 
     public String getHi(){
         return this.hi;
+    }
+
+    public GrettingModel setHi(String hi) {
+        this.hi = hi;
+        return this;
     }
 }
