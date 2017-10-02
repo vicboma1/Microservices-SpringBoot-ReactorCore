@@ -9,7 +9,10 @@
 
     <!-- Service -->
     <bean name="serviceGreeting"   class="com.vicboma.fwk.spring.boot.service.src.ServiceGreetingImpl"/>
+
     <bean name="serviceHelloWorld" class="com.vicboma.fwk.spring.boot.service.src.ServiceHelloWorldImpl"/>
+
+    <bean name="serviceAnnotation" class="com.vicboma.fwk.spring.boot.service.src.ServiceAnnotationImpl"/>
 
     <!-- Controller -->
     <bean name="controllerGreeting"  abstract="true" class="com.vicboma.fwk.spring.boot.controller.src.GreetingControllerImpl">
@@ -18,6 +21,10 @@
 
     <bean name="controllerHelloWorld"  abstract="true" class="com.vicboma.fwk.spring.boot.controller.src.HelloWorldControllerImpl">
         <constructor-arg  ref ="serviceHelloWorld"/>
+    </bean>
+
+    <bean name="controllerAnnotation"  abstract="true" class="com.vicboma.fwk.spring.boot.controller.src.AnnotationControllerImpl">
+        <constructor-arg  ref ="serviceAnnotation"/>
     </bean>
 
 </beans>
