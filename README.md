@@ -32,7 +32,7 @@ Sample / WIP
 
    /**
     * @input http://localhost:8080/hi/vicboma/delayDefault
-    * @param name
+    * @param name / 500ms delay
     * @return {"hi":"vicboma"}
     */
     @GetMapping("/hi/{name}/delayDefault")
