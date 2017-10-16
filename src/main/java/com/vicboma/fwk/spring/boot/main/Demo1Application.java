@@ -9,6 +9,14 @@ import org.springframework.context.annotation.ComponentScan;
 public class Demo1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Demo1Application.class, args);
+		try {
+			SpringApplication.run(Demo1Application.class, args);
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		finally {
+			System.out.println("End process.");
+		}
 	}
 }

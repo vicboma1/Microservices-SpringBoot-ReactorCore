@@ -5,7 +5,7 @@ import reactor.core.publisher.Mono;
 
 public interface ServiceGreeting extends Service {
 
-    public long TIME_DEFAULT = 1500L;
+    long TIME_DEFAULT = 1500L;
 
     Mono<GrettingModel> get(String name);
     Mono<GrettingModel> getDelay(String name);
