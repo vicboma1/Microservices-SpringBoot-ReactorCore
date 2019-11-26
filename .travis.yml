@@ -11,12 +11,13 @@ cache:
 env:
   global:
     - DISPLAY=:99.0
+  dist: xenial
 
 jdk:
-  - oraclejdk8
+  - openjdk8
 
 script:
-  - jdk_switcher use oraclejdk8
+  - jdk_switcher use openjdk8
   - mvn test -f ./pom.xml
 
 after_success:
