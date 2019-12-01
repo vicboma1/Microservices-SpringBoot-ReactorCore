@@ -4,7 +4,7 @@ Sample / WIP
 
 
 
-[![](https://travis-ci.org/vicboma1/Microservices-SpringBoot-ReactorCore.svg?branch=master)](https://travis-ci.org/vicboma1/Microservices-SpringBoot-ReactorCore)  ![](https://img.shields.io/badge/Maven-4.0.0-green.svg)  ![](https://img.shields.io/badge/Java-1.8-blue.svg)  ![](https://img.shields.io/badge/SpringBoot-2.00-blue.svg)  ![](https://img.shields.io/badge/ReactorCore-3.1.0-yellow.svg)  ![](https://img.shields.io/badge/JUnit-4.10-orange.svg)
+![](https://img.shields.io/badge/build-success-greenligth.svg)  ![](https://img.shields.io/badge/Maven-4.0.0-blue.svg)  ![](https://img.shields.io/badge/Java-1.8-blue.svg)  ![](https://img.shields.io/badge/SpringBoot-2.00-blue.svg)  ![](https://img.shields.io/badge/ReactorCore-3.1.0-yellow.svg)  ![](https://img.shields.io/badge/JUnit-4.10-orange.svg)
 
 
 ## Api - /
