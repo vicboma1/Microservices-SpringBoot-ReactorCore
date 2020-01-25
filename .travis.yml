@@ -13,16 +13,7 @@ env:
     - DISPLAY=:99.0
   dist: xenial
 
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
-      
-jdk:
-  - oraclejdk8
-
 script:
-  - jdk_switcher use oraclejdk8
   - mvn test -f ./pom.xml
 
 after_success:
