@@ -1,12 +1,5 @@
 language: java
-
-before_install:
-  - sudo add-apt-repository ppa:openjdk-r/ppa
-  - sudo apt-get -qq update
-  - sudo apt-get install -y openjdk-8-jdk
-  - sudo update-java-alternatives -s java-1.8.0-openjdk-amd64
-  
-sudo: true
+sudo: false
 notifications:
   email:
     on_success: never
@@ -20,11 +13,16 @@ env:
     - DISPLAY=:99.0
   dist: xenial
 
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+      
 jdk:
-  - openjdk-8-jdk
+  - oraclejdk8
 
 script:
-  - jdk_switcher use openjdk-8-jdk
+  - jdk_switcher use oraclejdk8
   - mvn test -f ./pom.xml
 
 after_success:
