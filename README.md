@@ -1,7 +1,6 @@
 # Microservices with Spring Boot v2.0 & Reactor Core v3.1.0
 
-Sample / WIP
-
+Sample
 
 
 ![](https://img.shields.io/badge/build-success-greenligth.svg)  ![](https://img.shields.io/badge/Maven-4.0.0-blue.svg)  ![](https://img.shields.io/badge/Java-1.8-blue.svg)  ![](https://img.shields.io/badge/SpringBoot-2.00-blue.svg)  ![](https://img.shields.io/badge/ReactorCore-3.1.0-yellow.svg)  ![](https://img.shields.io/badge/JUnit-4.10-orange.svg)
