@@ -18,7 +18,7 @@ script:
 
 after_success:
   - mvn clean test cobertura:cobertura coveralls:report
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey= vicboma1 / Microservices-SpringBoot-ReactorCore
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=vicboma1_Microservices-SpringBoot-ReactorCore
   
 addons:
   sonarcloud:
