@@ -80,7 +80,7 @@
 			<dependency>
 				<groupId>io.projectreactor</groupId>
 				<artifactId>reactor-bom</artifactId>
-				<version>Dysprosium-SR4</version>
+				<version>2020.0.23</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
