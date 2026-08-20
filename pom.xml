@@ -58,7 +58,7 @@
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
-			<version>3.3.2.RELEASE</version>
+			<version>3.8.7</version>
 		</dependency>
 
 		<dependency>
